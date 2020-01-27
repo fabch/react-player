@@ -164,6 +164,21 @@ export class FilePlayer extends Component {
         this.hls.on(Hls.Events.ERROR, (e, data) => {
           this.props.onError(e, data, this.hls, Hls)
         })
+        this.hls.on(Hls.Events.LEVEL_SWITCHING, (...args) => {
+          this.props.onLevelSwitching(...args)
+        })
+        this.hls.on(Hls.Events.LEVEL_SWITCHED, (...args) => {
+          this.props.onLevelSwitched(...args)
+        })
+        this.hls.on(Hls.Events.LEVEL_LOADING, (...args) => {
+          this.props.onLevelLoading(...args)
+        })
+        this.hls.on(Hls.Events.LEVEL_LOADED, (...args) => {
+          this.props.onLevelLoaded(...args)
+        })
+        this.hls.on(Hls.Events.LEVEL_UPDATED, (...args) => {
+          this.props.onLevelUpdated(...args)
+        })
         this.hls.loadSource(url)
         this.hls.attachMedia(this.player)
       })

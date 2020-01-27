@@ -78,7 +78,13 @@ export const propTypes = {
   onSeek: func,
   onProgress: func,
   onEnablePIP: func,
-  onDisablePIP: func
+  onDisablePIP: func,
+  onLevelSwitching: func,
+  onLevelSwitched: func,
+  onLevelLoading: func,
+  onLevelLoaded: func,
+  onLevelUpdated: func
+
 }
 
 export const defaultProps = {
@@ -174,7 +180,12 @@ export const defaultProps = {
   onSeek: function () {},
   onProgress: function () {},
   onEnablePIP: function () {},
-  onDisablePIP: function () {}
+  onDisablePIP: function () {},
+  onLevelSwitching: function () {},
+  onLevelSwitched: function () {},
+  onLevelLoading: function () {},
+  onLevelLoaded: function () {},
+  onLevelUpdated: function () {}
 }
 
 export const DEPRECATED_CONFIG_PROPS = [
